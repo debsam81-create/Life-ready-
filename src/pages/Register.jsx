@@ -3,17 +3,17 @@ import { User, Mail, Calendar, CheckCircle, ShoppingCart, MessageCircle } from '
 import { Link, useSearchParams } from 'react-router-dom';
 
 const courseLinks = {
-  "Cooking 101": "https://buy.stripe.com/9B65kDdRC9lu3Jg7sT28801",
-  "How to Budget": "https://buy.stripe.com/cNifZhcNygNWa7E7sT28802",
-  "Ready for College Bundle": "https://buy.stripe.com/00w00j3cYbtCfrYfZp28804",
-  "Private 1-on-1 Coaching": "https://buy.stripe.com/6oU4gz3cY7dm6VseVl28803",
-  "Basic Home Repair": "https://buy.stripe.com/dRmfZhcNygNW7ZwcNd28800",
-  "Job Interview Prep": "https://buy.stripe.com/aFa6oH7te69ibbI4gH28805"
+  "Cooking 101 Workshop": "https://buy.stripe.com/00w14n9Bm55e3Jg00r28806",
+  "How to Budget Workshop": "https://buy.stripe.com/7sYeVdfZK55e3Jg9B128807",
+  "Ready for College Bundle": "https://buy.stripe.com/cNi9ATeVGapy93A8wX2880a",
+  "Private 1-on-1 Coaching": "https://buy.stripe.com/3cIbJ16pafJS4Nk9B12880b",
+  "Basic Home Repair Workshop": "https://buy.stripe.com/8x2dR97tecxG4Nk14v28809",
+  "Job Interview Prep Workshop": "https://buy.stripe.com/dRm6oHeVG9lucfMdRh28808"
 };
 
 const Register = () => {
   const [searchParams] = useSearchParams();
-  const initialCourse = searchParams.get('course') || "Cooking 101";
+  const initialCourse = searchParams.get('course') || "Cooking 101 Workshop";
   
   const [submitted, setSubmitted] = React.useState(false);
   const [course, setCourse] = React.useState(initialCourse);
