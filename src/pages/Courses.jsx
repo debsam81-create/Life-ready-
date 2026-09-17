@@ -6,25 +6,27 @@ import cardBg from '../assets/brand/course-card-bg.png';
 const courses = [
   {
     id: 1,
-    title: "Cooking 101",
+    title: "Cooking 101 Workshop",
     type: "Workshop",
     price: "$35",
     duration: "2 hours",
+    ageRange: "13-18",
     description: "Learn basic kitchen safety and how to cook 3 simple, healthy meals.",
     category: "Cooking",
     featured: true,
-    stripeLink: "https://buy.stripe.com/9B65kDdRC9lu3Jg7sT28801"
+    stripeLink: "https://buy.stripe.com/00w14n9Bm55e3Jg00r28806"
   },
   {
     id: 2,
-    title: "How to Budget",
+    title: "How to Budget Workshop",
     type: "Workshop",
     price: "$40",
     duration: "1.5 hours",
+    ageRange: "13-18",
     description: "Master the basics of personal finance, saving, and smart spending.",
     category: "Finance",
     featured: false,
-    stripeLink: "https://buy.stripe.com/cNifZhcNygNWa7E7sT28802"
+    stripeLink: "https://buy.stripe.com/7sYeVdfZK55e3Jg9B128807"
   },
   {
     id: 3,
@@ -32,10 +34,11 @@ const courses = [
     type: "Multi-session",
     price: "$250",
     duration: "8 classes",
+    ageRange: "16-18",
     description: "Our most popular track covering laundry, basic cooking, budgeting, and time management.",
     category: "Life Prep",
     featured: true,
-    stripeLink: "https://buy.stripe.com/00w00j3cYbtCfrYfZp28804"
+    stripeLink: "https://buy.stripe.com/cNi9ATeVGapy93A8wX2880a"
   },
   {
     id: 4,
@@ -43,32 +46,35 @@ const courses = [
     type: "Personalized",
     price: "$85/hr",
     duration: "Flexible",
+    ageRange: "13-18",
     description: "Focused instruction on specific skills tailored to your teen's needs.",
     category: "Coaching",
     featured: false,
-    stripeLink: "https://buy.stripe.com/6oU4gz3cY7dm6VseVl28803"
+    stripeLink: "https://buy.stripe.com/3cIbJ16pafJS4Nk9B12880b"
   },
   {
     id: 5,
-    title: "Basic Home Repair",
+    title: "Basic Home Repair Workshop",
     type: "Workshop",
     price: "$45",
     duration: "2.5 hours",
+    ageRange: "13-18",
     description: "How to fix a leaky faucet, patch a wall, and use basic tools safely.",
     category: "Home",
     featured: false,
-    stripeLink: "https://buy.stripe.com/dRmfZhcNygNW7ZwcNd28800"
+    stripeLink: "https://buy.stripe.com/8x2dR97tecxG4Nk14v28809"
   },
   {
     id: 6,
-    title: "Job Interview Prep",
+    title: "Job Interview Prep Workshop",
     type: "Workshop",
     price: "$30",
     duration: "1.5 hours",
+    ageRange: "14-18",
     description: "Resume building, mock interviews, and professional communication skills.",
     category: "Career",
     featured: false,
-    stripeLink: "https://buy.stripe.com/aFa6oH7te69ibbI4gH28805"
+    stripeLink: "https://buy.stripe.com/dRm6oHeVG9lucfMdRh28808"
   }
 ];
 
@@ -104,6 +110,10 @@ const Courses = () => {
                     <span>{course.duration}</span>
                   </div>
                   <div className="flex items-center text-sm">
+                    <User className="h-4 w-4 mr-2 text-teal" />
+                    <span>Ages {course.ageRange}</span>
+                  </div>
+                  <div className="flex items-center text-sm">
                     <Tag className="h-4 w-4 mr-2 text-teal" />
                     <span>{course.category}</span>
                   </div>
@@ -116,7 +126,7 @@ const Courses = () => {
                   className={`w-full py-4 rounded-lg font-bold transition flex items-center justify-center ${course.featured ? 'bg-coral text-white hover:opacity-90 shadow-lg shadow-coral/20' : 'bg-teal-light text-teal hover:bg-teal hover:text-white'}`}
                 >
                   <ShoppingCart className="h-5 w-5 mr-2" />
-                  Buy Now
+                  Register Now
                 </a>
                 
                 <div className="mt-4 text-center">
