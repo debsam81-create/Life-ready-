@@ -21,8 +21,13 @@ app.post('/api/signup', (req, res) => {
     return res.status(200).json({ success: true, message: "You're on the list — we'll be in touch" });
   }
 
-  // Basic email validation
-  if (!email || !email.includes('@')) {
+  // Whitelist-sanitize inputs to prevent shell injection
+  const sanitize = (s) => (s || '').replace(/[^a-zA-Z0-9@.+ _'-]/g, '').slice(0, 100);
+  const safeEmail = sanitize(email);
+  const safeName = sanitize(name);
+
+  // Robust email validation
+  if (!/^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,}$/.test(safeEmail)) {
     return res.status(400).json({ error: 'Please provide a valid email address.' });
   }
 
@@ -31,10 +36,6 @@ app.post('/api/signup', (req, res) => {
   const source = 'website';
 
   try {
-    // Sanitize inputs for shell command
-    const safeEmail = email.replace(/'/g, "''");
-    const safeName = (name || '').replace(/'/g, "''");
-    
     const sql = `INSERT INTO signups (id, email, name, source, created_at) VALUES ('${id}', '${safeEmail}', '${safeName}', '${source}', '${createdAt}')`;
     
     console.log(`Executing: team-db "${sql}"`);
