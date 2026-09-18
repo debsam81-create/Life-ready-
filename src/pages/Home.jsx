@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { CheckCircle, Clock, BookOpen, Users, ArrowRight } from 'lucide-react';
 import heroImage from '../assets/brand/hero-learning.jpg';
 import studentsImage from '../assets/brand/hero-students.jpg';
+import SignupForm from '../components/SignupForm';
 
 const Home = () => {
   return (
@@ -102,6 +103,37 @@ const Home = () => {
                   Enroll Your Teen Today <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-2 transition" />
                 </Link>
               </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Newsletter Signup Section */}
+      <section className="py-24 bg-teal-light/30">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+            <div>
+              <span className="text-coral font-bold uppercase tracking-widest text-sm">Stay Updated</span>
+              <h2 className="text-4xl md:text-5xl font-bold text-navy mt-4 mb-6 leading-tight">
+                Be the first to know when <span className="text-teal">new workshops</span> open.
+              </h2>
+              <p className="text-xl text-slate font-serif leading-relaxed mb-8">
+                We're constantly adding new life-skills tracks based on parent feedback. Join our mailing list for early access and special launch pricing.
+              </p>
+              <div className="flex items-center space-x-6">
+                <div className="flex -space-x-2">
+                  {[1,2,3].map(i => (
+                    <div key={i} className="h-12 w-12 rounded-full border-2 border-white bg-teal-light flex items-center justify-center text-teal font-bold text-xs">
+                      P{i}
+                    </div>
+                  ))}
+                </div>
+                <p className="text-sm font-bold text-navy">Joined by 200+ parents</p>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="absolute inset-0 bg-coral/5 rounded-[3rem] blur-3xl -z-10 transform rotate-6"></div>
+              <SignupForm />
             </div>
           </div>
         </div>
